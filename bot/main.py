@@ -41,7 +41,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     if query.data == "next_match":
         await query.edit_message_text(
-            text="⏳ *Próximo Jogo:*\nFURIA vs NAVI\n📅 15/05 - 19h\n🏆 IEM Katowice\n\n🔗 https://www.furia.gg/agenda",
+            text="⏳ *Próximo Jogo:*\nFURIA vs NAVI\n📅 15/05 - 19h\n🏆 IEM Katowice\n\n🔗 https://www.furia.gg/agenda", 
             parse_mode='Markdown'
         )
     elif query.data == "news":
