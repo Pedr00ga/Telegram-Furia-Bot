@@ -13,8 +13,8 @@ if not ENV_PATH.exists():
 
 load_dotenv(ENV_PATH, override=True)
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-CHANNEL_ID = "DIGITE O ID DO SEU CHAT"
-CHANNEL_LINK = "DIGITE O LINK DO SEU CANAL"
+CHANNEL_ID = os.getenv("CHANNEL_ID")
+CHANNEL_LINK = os.getenv("CHANNEL_LINK")
 
 if not TOKEN or len(TOKEN) < 30:
     raise ValueError(f"Token inválido: '{TOKEN}'. Verifique o .env")
