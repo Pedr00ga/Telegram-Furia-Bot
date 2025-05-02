@@ -67,6 +67,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Envia o menu principal"""
     await show_main_menu(update, context)
 
+## Mostra o menu principal com opções
 async def show_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE, message: str = None):
     """Mostra o menu principal com opções"""
     keyboard = [
@@ -97,11 +98,13 @@ async def show_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE, mes
             parse_mode='Markdown'
         )
 
+## Manipula os botões
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Manipula todos os callbacks dos botões"""
     query = update.callback_query
     await query.answer()
     
+
     if query.data == "next_match":
         keyboard = [
             [InlineKeyboardButton("Voltar ↩️", callback_data="main_menu")],
@@ -130,7 +133,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("Sair ❌", callback_data="exit")]
     ]
     
-    # Texto formatado corretamente para Markdown
+    # Texto formatado com o nome do time e instagram
         team_text = (
             "👥 *Elenco Principal FURIA CS:GO* ⚫🟡\n\n"
             "• [MOLODOY](https://www.instagram.com/danil.molodoy_/)\n"
